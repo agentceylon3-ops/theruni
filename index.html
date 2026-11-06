@@ -134,6 +134,23 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+
+        /*nav*/
+        /* Glassmorphism & Gold Theme Extras */
+.glass-nav {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.text-gold-400 { color: #fbbf24; }
+.ring-gold-500\/30 { --tw-ring-color: rgba(245, 158, 11, 0.3); }
+.from-gold-500 { --tw-gradient-from: #f59e0b var(--tw-gradient-from-position); }
+.text-navy-900 { color: #0f172a; }
+
+
+
     </style>
 </head>
 <body class="bg-navy-900 text-gray-100 font-sans selection:bg-gold-500 selection:text-navy-900 overflow-x-hidden relative">
@@ -164,7 +181,58 @@
         <span class="hidden sm:inline font-bold text-sm tracking-wide">Chat on WhatsApp</span>
     </a>
 
-  
+  <!-- Navigation Header -->
+    <!-- Navigation Header -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300 backdrop-blur-md bg-slate-900/80 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <!-- Logo Section -->
+        <a href="#" class="flex items-center gap-3 group">
+            <img src="3.jpeg" alt="Logo" class="w-10 h-10 object-contain rounded-xl ring-1 ring-amber-500/30 group-hover:ring-amber-500 transition-all" onerror="this.src='https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=100&h=100&fit=crop'">
+            <div class="flex flex-col">
+                <span class="font-bold text-lg tracking-tight text-white">StepUp Mathematics</span>
+                <span class="text-xs text-amber-400 font-medium tracking-wider uppercase">By Theruni Fernando</span>
+            </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+            <a href="#about" class="hover:text-amber-400 transition-colors">About</a>
+            <a href="#subjects" class="hover:text-amber-400 transition-colors">Subjects</a>
+            <a href="#options" class="hover:text-amber-400 transition-colors">Flexible Options</a>
+            <a href="#why-choose" class="hover:text-amber-400 transition-colors">Why Me</a>
+        </nav>
+
+        <!-- Right Side CTA & Mobile Toggle Button -->
+        <div class="flex items-center gap-4">
+            <a href="#enquire" class="hidden sm:inline-block bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all text-sm">
+                Enquire Today
+            </a>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" aria-label="Toggle Menu" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2 rounded-lg border border-white/10 bg-white/5">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-slate-900/95 backdrop-blur-xl px-4 pt-4 pb-6 space-y-4">
+        <a href="#about" class="mobile-link block text-gray-300 hover:text-amber-400 font-medium py-2 transition-colors">About</a>
+        <a href="#subjects" class="mobile-link block text-gray-300 hover:text-amber-400 font-medium py-2 transition-colors">Subjects</a>
+        <a href="#options" class="mobile-link block text-gray-300 hover:text-amber-400 font-medium py-2 transition-colors">Flexible Options</a>
+        <a href="#why-choose" class="mobile-link block text-gray-300 hover:text-amber-400 font-medium py-2 transition-colors">Why Me</a>
+        <div class="pt-2 sm:hidden">
+            <a href="#enquire" class="mobile-link block w-full text-center bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-bold px-5 py-3 rounded-xl shadow-lg shadow-amber-500/20 text-sm">
+                Enquire Today
+            </a>
+        </div>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section class="relative z-10 pt-32 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -548,6 +616,30 @@
                 toast.classList.add('hidden');
             }, 1500);
         }
+
+
+
+        //nav
+        const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
+const closeIcon = document.getElementById('close-icon');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
+
+// Click කරාම Mobile Drawer එක auto close වීමට
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    });
+});
     </script>
 </body>
 </html>
