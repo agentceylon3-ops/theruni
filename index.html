@@ -8,20 +8,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         navy: {
-                            900: '#070F1E',
-                            800: '#0C182E',
-                            700: '#132342',
+                            900: '#1A0B12', /* Luxury Deep Dark Plum/Pink */
+                            800: '#26101B',
+                            700: '#381627',
                         },
                         gold: {
-                            400: '#FCD34D',
-                            500: '#F59E0B',
-                            600: '#D97706',
+                            400: '#F472B6', /* Bright Pink Accent */
+                            500: '#EC4899', /* Vibrant Rose Pink */
+                            600: '#DB2777', /* Deep Magenta Pink */
                         }
                     },
                     fontFamily: {
@@ -35,18 +35,18 @@
     <style>
         /* Custom Glassmorphism & Animations */
         .glass-card {
-            background: rgba(19, 35, 66, 0.45);
+            background: rgba(56, 22, 39, 0.45);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(252, 211, 77, 0.12);
+            border: 1px solid rgba(244, 114, 182, 0.18);
         }
         .glass-card-hover:hover {
-            border-color: rgba(252, 211, 77, 0.35);
+            border-color: rgba(244, 114, 182, 0.45);
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.15);
+            box-shadow: 0 20px 40px -15px rgba(236, 72, 153, 0.25);
         }
         .glass-nav {
-            background: rgba(7, 15, 30, 0.85);
+            background: rgba(26, 11, 18, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -59,7 +59,7 @@
             animation: floatSlow 6s ease-in-out infinite;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #6EE7B7 100%);
+            background: linear-gradient(135deg, #F472B6 0%, #EC4899 50%, #F43F5E 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -84,11 +84,11 @@
         }
         .math-symbol {
             position: absolute;
-            color: rgba(252, 211, 77, 0.22);
+            color: rgba(244, 114, 182, 0.25);
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             user-select: none;
-            text-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+            text-shadow: 0 0 12px rgba(236, 72, 153, 0.3);
             animation: floatMathSymbols linear infinite;
         }
         @keyframes floatMathSymbols {
@@ -135,22 +135,18 @@
             transform: translateY(0);
         }
 
-
         /*nav*/
-        /* Glassmorphism & Gold Theme Extras */
-.glass-nav {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
+        /* Glassmorphism & Pink Theme Extras */
+        .glass-nav {
+            background: rgba(26, 11, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
 
-.text-gold-400 { color: #fbbf24; }
-.ring-gold-500\/30 { --tw-ring-color: rgba(245, 158, 11, 0.3); }
-.from-gold-500 { --tw-gradient-from: #f59e0b var(--tw-gradient-from-position); }
-.text-navy-900 { color: #0f172a; }
-
-
-
+        .text-gold-400 { color: #f472b6; }
+        .ring-gold-500\/30 { --tw-ring-color: rgba(236, 72, 153, 0.3); }
+        .from-gold-500 { --tw-gradient-from: #ec4899 var(--tw-gradient-from-position); }
+        .text-navy-900 { color: #1a0b12; }
     </style>
 </head>
 <body class="bg-navy-900 text-gray-100 font-sans selection:bg-gold-500 selection:text-navy-900 overflow-x-hidden relative">
@@ -195,7 +191,7 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300" style="">
             <a href="#about" class="hover:text-amber-400 transition-colors">About</a>
             <a href="#subjects" class="hover:text-amber-400 transition-colors">Subjects</a>
             <a href="#options" class="hover:text-amber-400 transition-colors">Flexible Options</a>
